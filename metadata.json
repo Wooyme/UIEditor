@@ -1,0 +1,5 @@
+{
+  "name": "UI Slicer & Editor",
+  "description": "Import UI mockups, automatically slice them into components using computer vision algorithms, and rearrange them in a drag-and-drop workspace. Features AI-powered component naming.",
+  "requestFramePermissions": []
+}
