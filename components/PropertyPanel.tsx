@@ -346,6 +346,13 @@ export const PropertyPanel: React.FC<PropertyPanelProps> = ({
                     >
                         9-Slice
                     </button>
+                    <button 
+                        onClick={() => onChange(component.id, { scaleMode: 'crop' })}
+                        className={`flex-1 py-1 text-[10px] rounded transition-colors ${component.scaleMode === 'crop' ? 'bg-primary text-white' : 'text-slate-400 hover:text-slate-200'}`}
+                        disabled={component.locked}
+                    >
+                        Crop
+                    </button>
                 </div>
 
                 {component.scaleMode === 'nine-slice' && (

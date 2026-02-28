@@ -199,6 +199,25 @@ export const renderScaledComponent = async (component: UIComponent): Promise<str
         }
       }
     }
+  } else if (component.scaleMode === 'crop') {
+    const imgRatio = img.width / img.height;
+    const canvasRatio = canvas.width / canvas.height;
+    let sWidth = img.width;
+    let sHeight = img.height;
+    let sx = 0;
+    let sy = 0;
+
+    if (imgRatio > canvasRatio) {
+      // Image is wider than canvas, crop sides
+      sWidth = img.height * canvasRatio;
+      sx = (img.width - sWidth) / 2;
+    } else {
+      // Image is taller than canvas, crop top/bottom
+      sHeight = img.width / canvasRatio;
+      sy = (img.height - sHeight) / 2;
+    }
+
+    ctx.drawImage(img, sx, sy, sWidth, sHeight, 0, 0, canvas.width, canvas.height);
   } else {
     // Proportional or standard stretch
     ctx.drawImage(img, 0, 0, component.width, component.height);

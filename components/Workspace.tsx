@@ -433,6 +433,16 @@ export const Workspace: React.FC<WorkspaceProps> = ({
                                     borderImageRepeat: 'stretch'
                                 }}
                             />
+                        ) : comp.scaleMode === 'crop' ? (
+                            <div 
+                                className="w-full h-full"
+                                style={{
+                                    backgroundImage: `url(${comp.imageBase64})`,
+                                    backgroundSize: 'cover',
+                                    backgroundPosition: 'center',
+                                    backgroundRepeat: 'no-repeat',
+                                }}
+                            />
                         ) : (
                             <div 
                                 className="w-full h-full"

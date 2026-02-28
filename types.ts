@@ -15,7 +15,7 @@ export interface UIComponent {
   sourceFileName: string;
   tags?: string[];
   locked?: boolean;
-  scaleMode?: 'proportional' | 'nine-slice';
+  scaleMode?: 'proportional' | 'nine-slice' | 'crop';
   nineSlice?: {
     left: number;
     right: number;
